@@ -1,0 +1,11 @@
+<div class="card">
+    <img src="{{ preview }}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ name }}</h5>
+        <p class="card-text">{{ description }}</p>
+        <p class="card-text">
+            {{ active == 'true' ? '<span class="badge badge-success">Actif</span>'}}
+            {{ prenium == 'true' ? '<span class="badge badge-warning">Prenium</span>'}}
+        </p>
+    </div>
+</div>

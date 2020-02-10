@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{parent()}} - Card Template
+    
+{% endblock %}
+
+{% block body %}
+    {% include 'card_template/sidebar.html.twig' %}
+    <div class="container">
+
+
+
+
+            <!-- Page Content -->
+        {% for i in range(0, cards|length -1, 2) %}
+            <div class="card-deck my-5">
+                {% include 'card_template/card.html.twig' with {'name': cards[i].name, 'description': cards[i].description,  'active': cards[i].active, 'prenium': cards[i].prenium, 'preview': cards[i].preview}  %}
+                {% include 'card_template/card.html.twig' with {'name': cards[i + 1].name, 'description': cards[i + 1].description,  'active': cards[i + 1].active, 'prenium': cards[i + 1].prenium, 'preview': cards[i + 1].preview}%}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
